@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 
-import 'kit_text.dart';
 import '../theme/kit_theme.dart';
 import '../tokens/kit_tokens.dart';
+import 'kit_text.dart';
 
 class KitBadge extends StatelessWidget {
   const KitBadge({required this.label, super.key});

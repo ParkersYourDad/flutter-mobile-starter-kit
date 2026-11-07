@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 
+import '../tokens/kit_tokens.dart';
 import 'kit_button.dart';
 import 'kit_text.dart';
-import '../tokens/kit_tokens.dart';
 
 class KitEmptyState extends StatelessWidget {
   const KitEmptyState({

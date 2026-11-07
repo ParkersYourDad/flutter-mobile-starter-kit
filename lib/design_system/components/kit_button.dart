@@ -1,9 +1,9 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
-import 'kit_text.dart';
 import '../theme/kit_theme.dart';
 import '../tokens/kit_tokens.dart';
+import 'kit_text.dart';
 
 class KitButton extends StatefulWidget {
   const KitButton({
@@ -40,7 +40,7 @@ class _KitButtonState extends State<KitButton> {
     });
   }
 
-  KeyEventResult _handleKey(FocusNode node, KeyEvent event) {
+  KeyEventResult _handleKey(FocusNode _, KeyEvent event) {
     if (!_enabled) return KeyEventResult.ignored;
 
     if (event is KeyDownEvent &&
