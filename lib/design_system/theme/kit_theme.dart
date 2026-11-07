@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
 
-import '../tokens/kit_tokens.dart';
+import 'package:flutter_mobile_starter_kit/design_system/tokens/kit_tokens.dart';
 
 class KitColorScheme {
-  const KitColorScheme({
+  const new({
     required this.canvas,
     required this.surface,
     required this.surfaceMuted,
@@ -27,7 +27,7 @@ class KitColorScheme {
 }
 
 class KitTypography {
-  const KitTypography({
+  const new({
     required this.display,
     required this.headline,
     required this.title,
@@ -45,7 +45,7 @@ class KitTypography {
 }
 
 class KitThemeData {
-  const KitThemeData({required this.colors, required this.typography});
+  const new({required this.colors, required this.typography});
 
   final KitColorScheme colors;
   final KitTypography typography;
@@ -98,7 +98,7 @@ class KitThemeData {
 }
 
 class KitTheme extends InheritedWidget {
-  const KitTheme({required this.data, required super.child, super.key});
+  const new({required this.data, required super.child, super.key});
 
   final KitThemeData data;
 

@@ -3,14 +3,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart' as material;
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-
-import '../theme/kit_theme.dart';
-import '../tokens/kit_tokens.dart';
-import 'kit_text.dart';
+import 'package:flutter_mobile_starter_kit/design_system/components/kit_text.dart';
+import 'package:flutter_mobile_starter_kit/design_system/theme/kit_theme.dart';
+import 'package:flutter_mobile_starter_kit/design_system/tokens/kit_tokens.dart';
 
 /// A first-party text field built on Flutter's low-level EditableText.
 class KitTextField extends StatefulWidget {
-  const KitTextField({
+  const new({
     required this.controller,
     required this.label,
     super.key,

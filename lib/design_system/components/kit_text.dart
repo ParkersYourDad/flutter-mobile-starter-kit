@@ -1,13 +1,13 @@
 import 'package:flutter/widgets.dart';
 
-import '../theme/kit_theme.dart';
+import 'package:flutter_mobile_starter_kit/design_system/theme/kit_theme.dart';
 
 enum KitTextVariant { display, headline, title, body, label, caption }
 
 enum KitTextTone { primary, secondary, accent, danger, onAccent }
 
 class KitText extends StatelessWidget {
-  const KitText(
+  const new(
     this.data, {
     super.key,
     this.variant = KitTextVariant.body,

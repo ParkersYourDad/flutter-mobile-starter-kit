@@ -13,9 +13,9 @@ void main() {
     await tester.pumpWidget(
       WidgetsApp(
         color: KitThemeData.light.colors.canvas,
-        builder: (context, _) => KitTheme(
+        builder: (context, _) => const KitTheme(
           data: KitThemeData.light,
-          child: const Directionality(
+          child: Directionality(
             textDirection: TextDirection.ltr,
             child: KitText(
               'Visible heading',
