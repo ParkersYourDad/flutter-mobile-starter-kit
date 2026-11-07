@@ -10,5 +10,6 @@
   "disabledButton": "زر غير مفعل",
   "buttonPressedMessage": "الزر يعمل بشكل صحيح.",
   "switchExample": "تفعيل الإشعارات",
-  "checkboxExample": "أوافق على الشروط"
+  "checkboxExample": "أوافق على الشروط",
+  "emailFieldLabel": "البريد الإلكتروني"
 }
