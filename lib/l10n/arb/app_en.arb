@@ -10,5 +10,6 @@
   "disabledButton": "Disabled button",
   "buttonPressedMessage": "The button is working.",
   "switchExample": "Enable notifications",
-  "checkboxExample": "Accept terms"
+  "checkboxExample": "Accept terms",
+  "emailFieldLabel": "Email address"
 }
