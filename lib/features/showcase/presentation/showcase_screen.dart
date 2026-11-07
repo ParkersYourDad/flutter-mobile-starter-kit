@@ -6,6 +6,7 @@ import '../../../design_system/components/kit_checkbox.dart';
 import '../../../design_system/components/kit_divider.dart';
 import '../../../design_system/components/kit_surface.dart';
 import '../../../design_system/components/kit_switch.dart';
+import '../../../design_system/components/kit_text_field.dart';
 import '../../../design_system/components/kit_text.dart';
 import '../../../design_system/theme/kit_theme.dart';
 import '../../../design_system/tokens/kit_tokens.dart';
@@ -22,6 +23,13 @@ class _ShowcaseScreenState extends State<ShowcaseScreen> {
   bool _buttonWasPressed = false;
   bool _notificationsEnabled = true;
   bool _termsAccepted = false;
+  final TextEditingController _emailController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -74,6 +82,16 @@ class _ShowcaseScreenState extends State<ShowcaseScreen> {
                       tone: KitTextTone.secondary,
                     ),
                   ],
+                  const SizedBox(height: KitSpacing.lg),
+                  const KitDivider(),
+                  const SizedBox(height: KitSpacing.md),
+                  KitTextField(
+                    controller: _emailController,
+                    label: l10n.emailFieldLabel,
+                    keyboardType: TextInputType.emailAddress,
+                    textInputAction: TextInputAction.done,
+                    autofillHints: const [AutofillHints.email],
+                  ),
                   const SizedBox(height: KitSpacing.lg),
                   const KitDivider(),
                   const SizedBox(height: KitSpacing.md),
