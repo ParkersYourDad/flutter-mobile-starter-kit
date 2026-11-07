@@ -27,10 +27,21 @@ class KitColorScheme {
 }
 
 class KitTypography {
-  const KitTypography({required this.body, required this.label});
+  const KitTypography({
+    required this.display,
+    required this.headline,
+    required this.title,
+    required this.body,
+    required this.label,
+    required this.caption,
+  });
 
+  final TextStyle display;
+  final TextStyle headline;
+  final TextStyle title;
   final TextStyle body;
   final TextStyle label;
+  final TextStyle caption;
 }
 
 class KitThemeData {
@@ -52,6 +63,24 @@ class KitThemeData {
       danger: KitColors.danger,
     ),
     typography: KitTypography(
+      display: TextStyle(
+        color: KitColors.textPrimary,
+        fontSize: 32,
+        fontWeight: FontWeight.w700,
+        height: 1.15,
+      ),
+      headline: TextStyle(
+        color: KitColors.textPrimary,
+        fontSize: 24,
+        fontWeight: FontWeight.w700,
+        height: 1.25,
+      ),
+      title: TextStyle(
+        color: KitColors.textPrimary,
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
+        height: 1.3,
+      ),
       body: TextStyle(
         color: KitColors.textPrimary,
         fontSize: 16,
@@ -62,6 +91,11 @@ class KitThemeData {
         fontSize: 14,
         fontWeight: FontWeight.w600,
         height: 1.3,
+      ),
+      caption: TextStyle(
+        color: KitColors.textSecondary,
+        fontSize: 12,
+        height: 1.4,
       ),
     ),
   );

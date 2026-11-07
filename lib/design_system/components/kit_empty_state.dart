@@ -1,7 +1,8 @@
 import 'package:flutter/widgets.dart';
 
-import '../tokens/kit_tokens.dart';
 import 'kit_button.dart';
+import 'kit_text.dart';
+import '../tokens/kit_tokens.dart';
 
 class KitEmptyState extends StatelessWidget {
   const KitEmptyState({
@@ -25,17 +26,15 @@ class KitEmptyState extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
+            KitText(
               title,
+              variant: KitTextVariant.title,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-              ),
             ),
             const SizedBox(height: KitSpacing.sm),
-            Text(
+            KitText(
               description,
+              tone: KitTextTone.secondary,
               textAlign: TextAlign.center,
             ),
             if (actionLabel != null && onAction != null) ...[

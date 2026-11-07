@@ -7,12 +7,20 @@ A reusable Flutter foundation for **Android and iOS**, with a first-party UI com
 - `WidgetsApp.router` app shell.
 - GoRouter navigation and Riverpod 3 state management.
 - Manual Notifier/AsyncNotifier providers; no provider code generation.
-- First-party design tokens, theme, and components.
+- First-party design tokens, typography, theme, and UI components.
 - English and Arabic localization through ARB and Flutter `gen-l10n`.
 - No mandatory backend, auth provider, database, analytics, or cloud vendor.
 
+## Current UI components
+- Text styles and semantic text: `KitText`.
+- Primary action and disabled state: `KitButton`.
+- Icon action foundation: `KitIconButton`.
+- Surface, badge, divider, and empty state.
+
+The public component API is exported from `lib/design_system/kit_ui.dart`.
+
 ## Status
-This is the initial source foundation, not yet production-verified. Native Android/iOS runner folders are generated locally as described below. Do not treat the project as release-ready until the verification and platform checks pass in a Flutter 3.47.9 environment.
+This is an evolving engineering foundation, not yet production-verified. Native Android/iOS runner folders are generated locally as described below. Do not treat the project as release-ready until verification and platform checks pass in a Flutter 3.47.9 environment.
 
 ## Getting started
 
@@ -54,8 +62,9 @@ lib/
   app/                  App composition and navigation
   design_system/
     components/         First-party reusable UI
-    theme/              Theme contract
+    theme/              Theme and typography
     tokens/             Color, spacing, radius, and motion tokens
+    kit_ui.dart         Public UI API
   features/showcase/    Small component preview screen
   l10n/arb/             English and Arabic source translations
 test/                   Component behavior tests

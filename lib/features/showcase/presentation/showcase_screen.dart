@@ -4,6 +4,7 @@ import '../../../design_system/components/kit_badge.dart';
 import '../../../design_system/components/kit_button.dart';
 import '../../../design_system/components/kit_divider.dart';
 import '../../../design_system/components/kit_surface.dart';
+import '../../../design_system/components/kit_text.dart';
 import '../../../design_system/theme/kit_theme.dart';
 import '../../../design_system/tokens/kit_tokens.dart';
 import '../../../l10n/app_localizations.dart';
@@ -30,19 +31,11 @@ class _ShowcaseScreenState extends State<ShowcaseScreen> {
           padding: const EdgeInsets.all(KitSpacing.lg),
           children: [
             const SizedBox(height: KitSpacing.xl),
-            Text(
-              l10n.appTitle,
-              style: TextStyle(
-                color: colors.textPrimary,
-                fontSize: 28,
-                fontWeight: FontWeight.w700,
-                height: 1.2,
-              ),
-            ),
+            KitText(l10n.appTitle, variant: KitTextVariant.headline),
             const SizedBox(height: KitSpacing.sm),
-            Text(
+            KitText(
               l10n.appSubtitle,
-              style: TextStyle(color: colors.textSecondary, height: 1.5),
+              tone: KitTextTone.secondary,
             ),
             const SizedBox(height: KitSpacing.xl),
             Wrap(
@@ -60,14 +53,7 @@ class _ShowcaseScreenState extends State<ShowcaseScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    l10n.componentsTitle,
-                    style: TextStyle(
-                      color: colors.textPrimary,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
+                  KitText(l10n.componentsTitle, variant: KitTextVariant.title),
                   const SizedBox(height: KitSpacing.md),
                   const KitDivider(),
                   const SizedBox(height: KitSpacing.md),
@@ -79,9 +65,9 @@ class _ShowcaseScreenState extends State<ShowcaseScreen> {
                   KitButton(label: l10n.disabledButton, onPressed: null),
                   if (_buttonWasPressed) ...[
                     const SizedBox(height: KitSpacing.md),
-                    Text(
+                    KitText(
                       l10n.buttonPressedMessage,
-                      style: TextStyle(color: colors.textSecondary),
+                      tone: KitTextTone.secondary,
                     ),
                   ],
                 ],
