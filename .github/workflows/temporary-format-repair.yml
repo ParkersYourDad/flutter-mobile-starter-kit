@@ -1,0 +1,35 @@
+name: Temporary Dart formatting repair
+
+on:
+  push:
+    branches:
+      - work/form-controls
+      - work/design-system-controls
+
+permissions:
+  contents: write
+
+jobs:
+  format:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.47.9
+          channel: stable
+          cache: true
+      - name: Format Dart sources
+        run: dart format .
+      - name: Commit formatting changes
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -- '*.dart'
+            git commit -m "chore: apply Dart formatting"
+            git push
+          fi
