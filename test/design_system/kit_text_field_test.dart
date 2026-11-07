@@ -45,16 +45,24 @@ void main() {
   testWidgets('exposes the supplied semantic label', (tester) async {
     final controller = TextEditingController();
     addTearDown(controller.dispose);
+    final semanticsHandle = tester.ensureSemantics();
 
-    await tester.pumpWidget(
-      testApp(
-        child: KitTextField(controller: controller, label: 'البريد الإلكتروني'),
-        direction: TextDirection.rtl,
-      ),
-    );
+    try {
+      await tester.pumpWidget(
+        testApp(
+          child: KitTextField(
+            controller: controller,
+            label: 'البريد الإلكتروني',
+          ),
+          direction: TextDirection.rtl,
+        ),
+      );
 
-    final semantics = tester.getSemantics(find.byType(KitTextField));
-    expect(semantics.label, 'البريد الإلكتروني');
+      final semantics = tester.getSemantics(find.byType(KitTextField));
+      expect(semantics.label, 'البريد الإلكتروني');
+    } finally {
+      semanticsHandle.dispose();
+    }
   });
 
   testWidgets('does not accept edits when disabled', (tester) async {
