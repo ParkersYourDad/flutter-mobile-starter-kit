@@ -21,6 +21,7 @@
 - `KitIconButton`: caller-supplied icon content, required semantic label, pointer and keyboard activation, focus indication, minimum 48 logical-pixel target.
 - `KitCheckbox`: controlled checked state, keyboard/pointer activation, semantics, and custom-drawn checkmark.
 - `KitSwitch`: controlled on/off state, directional thumb placement, keyboard/pointer activation, and toggled semantics.
+- `KitTextField`: editable text input built on `EditableText`, with caller-owned controller, optional focus node, formatters, autofill, IME actions, selection handles, adaptive context menu, helper/error feedback, and semantic field labeling.
 - `KitSurface`: neutral surface with optional outline.
 - `KitBadge`: compact status label.
 - `KitDivider`: token-colored separator.
