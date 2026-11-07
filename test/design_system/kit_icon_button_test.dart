@@ -33,12 +33,12 @@ void main() {
   });
 
   testWidgets('does not invoke callback when disabled', (tester) async {
-    var taps = 0;
+    const taps = 0;
     await tester.pumpWidget(
       testApp(
-        child: KitIconButton(
+        child: const KitIconButton(
           semanticLabel: 'Close',
-          icon: const Text('x'),
+          icon: Text('x'),
           onPressed: null,
         ),
       ),

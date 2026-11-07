@@ -1,13 +1,13 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
-import '../theme/kit_theme.dart';
-import '../tokens/kit_tokens.dart';
+import 'package:flutter_mobile_starter_kit/design_system/theme/kit_theme.dart';
+import 'package:flutter_mobile_starter_kit/design_system/tokens/kit_tokens.dart';
 
 enum KitIconButtonVariant { neutral, accent, quiet }
 
 class KitIconButton extends StatefulWidget {
-  const KitIconButton({
+  const new({
     required this.icon,
     required this.semanticLabel,
     required this.onPressed,
@@ -76,7 +76,7 @@ class _KitIconButtonState extends State<KitIconButton> {
   @override
   Widget build(BuildContext context) {
     final colors = KitTheme.of(context).colors;
-    final Color? background = switch (widget.variant) {
+    final background = switch (widget.variant) {
       KitIconButtonVariant.neutral => colors.surfaceMuted,
       KitIconButtonVariant.accent => colors.accent,
       KitIconButtonVariant.quiet => null,

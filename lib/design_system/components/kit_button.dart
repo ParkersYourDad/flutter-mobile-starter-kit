@@ -1,12 +1,11 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-
-import '../theme/kit_theme.dart';
-import '../tokens/kit_tokens.dart';
-import 'kit_text.dart';
+import 'package:flutter_mobile_starter_kit/design_system/components/kit_text.dart';
+import 'package:flutter_mobile_starter_kit/design_system/theme/kit_theme.dart';
+import 'package:flutter_mobile_starter_kit/design_system/tokens/kit_tokens.dart';
 
 class KitButton extends StatefulWidget {
-  const KitButton({required this.label, required this.onPressed, super.key});
+  const new({required this.label, required this.onPressed, super.key});
 
   final String label;
   final VoidCallback? onPressed;

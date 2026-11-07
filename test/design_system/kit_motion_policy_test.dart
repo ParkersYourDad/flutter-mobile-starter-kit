@@ -9,7 +9,7 @@ void main() {
 
     await tester.pumpWidget(
       MediaQuery(
-        data: const MediaQueryData(disableAnimations: false),
+        data: const MediaQueryData(),
         child: Builder(
           builder: (context) {
             resolved = KitMotionPolicy.duration(context, preferred);

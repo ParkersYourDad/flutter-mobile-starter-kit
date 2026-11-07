@@ -1,11 +1,11 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
-import '../theme/kit_theme.dart';
-import '../tokens/kit_tokens.dart';
+import 'package:flutter_mobile_starter_kit/design_system/theme/kit_theme.dart';
+import 'package:flutter_mobile_starter_kit/design_system/tokens/kit_tokens.dart';
 
 class KitSwitch extends StatefulWidget {
-  const KitSwitch({
+  const new({
     required this.value,
     required this.semanticLabel,
     required this.onChanged,
