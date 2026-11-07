@@ -10,5 +10,6 @@ export 'components/kit_icon_button.dart';
 export 'components/kit_surface.dart';
 export 'components/kit_switch.dart';
 export 'components/kit_text.dart';
+export 'components/kit_text_field.dart';
 export 'theme/kit_theme.dart';
 export 'tokens/kit_tokens.dart';

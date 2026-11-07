@@ -21,6 +21,7 @@
 - `KitIconButton`: caller-supplied icon content, required semantic label, pointer and keyboard activation, focus indication, minimum 48 logical-pixel target.
 - `KitCheckbox`: controlled checked state, keyboard/pointer activation, semantics, and custom-drawn checkmark.
 - `KitSwitch`: controlled on/off state, directional thumb placement, keyboard/pointer activation, and toggled semantics.
+- `KitTextField`: editable text input built on `EditableText`, with caller-owned controller, optional focus node, formatters, autofill, IME actions, selection handles, adaptive context menu, helper/error feedback, and semantic field labeling.
 - `KitSurface`: neutral surface with optional outline.
 - `KitBadge`: compact status label.
 - `KitDivider`: token-colored separator.
@@ -38,5 +39,5 @@
 
 ## Known limitations
 - The icon button accepts icon content from the caller; a consistent first-party icon drawing set has not been implemented yet.
-- Text input, selection controls, dialogs, and bottom sheets are not part of this initial set. Text editing will be added only with complete selection handles and context-menu behavior, not as a visual-only wrapper.
+- Dialogs and bottom sheets are not part of this initial set. They will be added on top of first-party overlay primitives after modal barrier semantics, focus management, dismissal, route restoration, and reduced-motion behavior are specified and tested.
 - Reduced-motion policy is not wired into the app shell yet. Non-essential component and route animations are intentionally not used until that policy is implemented.

@@ -1,11 +1,10 @@
 import 'package:flutter/widgets.dart';
-
-import '../tokens/kit_tokens.dart';
-import 'kit_button.dart';
-import 'kit_text.dart';
+import 'package:flutter_mobile_starter_kit/design_system/components/kit_button.dart';
+import 'package:flutter_mobile_starter_kit/design_system/components/kit_text.dart';
+import 'package:flutter_mobile_starter_kit/design_system/tokens/kit_tokens.dart';
 
 class KitEmptyState extends StatelessWidget {
-  const KitEmptyState({
+  const new({
     required this.title,
     required this.description,
     super.key,

@@ -15,6 +15,7 @@ A reusable Flutter foundation for **Android and iOS**, with a first-party UI com
 - Text styles and semantic text: `KitText`.
 - Primary action and disabled state: `KitButton`.
 - Icon action foundation: `KitIconButton`.
+- Accessible text input with platform selection behavior: `KitTextField`.
 - Controlled checkbox and switch.
 - Surface, badge, divider, and empty state.
 

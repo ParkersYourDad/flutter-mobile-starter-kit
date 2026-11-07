@@ -1,22 +1,19 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_mobile_starter_kit/features/showcase/presentation/showcase_screen.dart';
 import 'package:go_router/go_router.dart';
-
-import '../features/showcase/presentation/showcase_screen.dart';
 
 final GoRouter appRouter = GoRouter(
   routes: <RouteBase>[
     GoRoute(
       path: '/',
-      pageBuilder: (context, state) => KitPage<void>(
-        key: state.pageKey,
-        child: const ShowcaseScreen(),
-      ),
+      pageBuilder: (context, state) =>
+          KitPage<void>(key: state.pageKey, child: const ShowcaseScreen()),
     ),
   ],
 );
 
 class KitPage<T> extends Page<T> {
-  const KitPage({
+  const new({
     required this.child,
     super.key,
     super.name,

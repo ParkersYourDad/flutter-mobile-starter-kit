@@ -1,11 +1,11 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
-import '../theme/kit_theme.dart';
-import '../tokens/kit_tokens.dart';
+import 'package:flutter_mobile_starter_kit/design_system/theme/kit_theme.dart';
+import 'package:flutter_mobile_starter_kit/design_system/tokens/kit_tokens.dart';
 
 class KitCheckbox extends StatefulWidget {
-  const KitCheckbox({
+  const new({
     required this.value,
     required this.semanticLabel,
     required this.onChanged,
@@ -40,13 +40,11 @@ class _KitCheckboxState extends State<KitCheckbox> {
   KeyEventResult _handleKey(FocusNode _, KeyEvent event) {
     if (!_enabled) return KeyEventResult.ignored;
 
-    if (event is KeyDownEvent &&
-        event.logicalKey == LogicalKeyboardKey.enter) {
+    if (event is KeyDownEvent && event.logicalKey == LogicalKeyboardKey.enter) {
       _toggle();
       return KeyEventResult.handled;
     }
-    if (event is KeyDownEvent &&
-        event.logicalKey == LogicalKeyboardKey.space) {
+    if (event is KeyDownEvent && event.logicalKey == LogicalKeyboardKey.space) {
       _spaceIsDown = true;
       return KeyEventResult.handled;
     }
@@ -113,7 +111,7 @@ class _KitCheckboxState extends State<KitCheckbox> {
 }
 
 class _CheckmarkPainter extends CustomPainter {
-  const _CheckmarkPainter({required this.color});
+  const new({required this.color});
 
   final Color color;
 
