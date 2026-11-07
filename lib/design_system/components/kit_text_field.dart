@@ -27,9 +27,18 @@ class KitTextField extends StatefulWidget {
     this.enabled = true,
     this.errorText,
     this.helperText,
-  }) : assert(maxLines == null || maxLines > 0),
-       assert(minLines == null || minLines > 0),
-       assert(maxLines == null || minLines == null || maxLines >= minLines);
+  }) : assert(
+         maxLines == null || maxLines > 0,
+         'maxLines must be positive when provided.',
+       ),
+       assert(
+         minLines == null || minLines > 0,
+         'minLines must be positive when provided.',
+       ),
+       assert(
+         maxLines == null || minLines == null || maxLines >= minLines,
+         'maxLines must be greater than or equal to minLines.',
+       );
 
   final TextEditingController controller;
   final String label;
