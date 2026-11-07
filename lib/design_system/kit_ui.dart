@@ -8,6 +8,7 @@ export 'components/kit_divider.dart';
 export 'components/kit_empty_state.dart';
 export 'components/kit_icon_button.dart';
 export 'components/kit_surface.dart';
+export 'components/kit_text_field.dart';
 export 'components/kit_switch.dart';
 export 'components/kit_text.dart';
 export 'theme/kit_theme.dart';
