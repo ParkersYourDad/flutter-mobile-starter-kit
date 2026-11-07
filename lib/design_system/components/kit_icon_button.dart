@@ -50,13 +50,11 @@ class _KitIconButtonState extends State<KitIconButton> {
   KeyEventResult _handleKey(FocusNode _, KeyEvent event) {
     if (!_enabled) return KeyEventResult.ignored;
 
-    if (event is KeyDownEvent &&
-        event.logicalKey == LogicalKeyboardKey.enter) {
+    if (event is KeyDownEvent && event.logicalKey == LogicalKeyboardKey.enter) {
       _activate();
       return KeyEventResult.handled;
     }
-    if (event is KeyDownEvent &&
-        event.logicalKey == LogicalKeyboardKey.space) {
+    if (event is KeyDownEvent && event.logicalKey == LogicalKeyboardKey.space) {
       _spaceIsDown = true;
       setState(() => _pressed = true);
       return KeyEventResult.handled;
@@ -69,8 +67,7 @@ class _KitIconButtonState extends State<KitIconButton> {
       _activate();
       return KeyEventResult.handled;
     }
-    if (event is KeyUpEvent &&
-        event.logicalKey == LogicalKeyboardKey.enter) {
+    if (event is KeyUpEvent && event.logicalKey == LogicalKeyboardKey.enter) {
       return KeyEventResult.handled;
     }
     return KeyEventResult.ignored;

@@ -9,16 +9,14 @@ void main() {
       color: KitThemeData.light.colors.canvas,
       builder: (context, _) => KitTheme(
         data: KitThemeData.light,
-        child: Directionality(
-          textDirection: TextDirection.ltr,
-          child: child,
-        ),
+        child: Directionality(textDirection: TextDirection.ltr, child: child),
       ),
     );
   }
 
-  testWidgets('invokes callback when enabled icon button is tapped',
-      (tester) async {
+  testWidgets('invokes callback when enabled icon button is tapped', (
+    tester,
+  ) async {
     var taps = 0;
     await tester.pumpWidget(
       testApp(

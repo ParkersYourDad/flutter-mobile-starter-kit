@@ -30,9 +30,7 @@ class KitTextField extends StatefulWidget {
     this.helperText,
   }) : assert(maxLines == null || maxLines > 0),
        assert(minLines == null || minLines > 0),
-       assert(
-         maxLines == null || minLines == null || maxLines >= minLines,
-       );
+       assert(maxLines == null || minLines == null || maxLines >= minLines);
 
   final TextEditingController controller;
   final String label;
@@ -101,8 +99,8 @@ class _KitTextFieldState extends State<KitTextField> {
     final borderColor = hasError
         ? colors.danger
         : _focusNode.hasFocus
-            ? colors.accent
-            : colors.outline;
+        ? colors.accent
+        : colors.outline;
     final selectionControls = defaultTargetPlatform == TargetPlatform.iOS
         ? cupertino.cupertinoTextSelectionHandleControls
         : material.materialTextSelectionHandleControls;
@@ -142,9 +140,7 @@ class _KitTextFieldState extends State<KitTextField> {
                   controller: widget.controller,
                   focusNode: _focusNode,
                   style: theme.typography.body.copyWith(
-                    color: enabled
-                        ? colors.textPrimary
-                        : colors.textSecondary,
+                    color: enabled ? colors.textPrimary : colors.textSecondary,
                   ),
                   cursorColor: colors.accent,
                   backgroundCursorColor: colors.textSecondary,

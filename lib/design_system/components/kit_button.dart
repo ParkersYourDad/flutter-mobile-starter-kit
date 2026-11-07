@@ -6,11 +6,7 @@ import '../tokens/kit_tokens.dart';
 import 'kit_text.dart';
 
 class KitButton extends StatefulWidget {
-  const KitButton({
-    required this.label,
-    required this.onPressed,
-    super.key,
-  });
+  const KitButton({required this.label, required this.onPressed, super.key});
 
   final String label;
   final VoidCallback? onPressed;
@@ -43,13 +39,11 @@ class _KitButtonState extends State<KitButton> {
   KeyEventResult _handleKey(FocusNode _, KeyEvent event) {
     if (!_enabled) return KeyEventResult.ignored;
 
-    if (event is KeyDownEvent &&
-        event.logicalKey == LogicalKeyboardKey.enter) {
+    if (event is KeyDownEvent && event.logicalKey == LogicalKeyboardKey.enter) {
       _activate();
       return KeyEventResult.handled;
     }
-    if (event is KeyDownEvent &&
-        event.logicalKey == LogicalKeyboardKey.space) {
+    if (event is KeyDownEvent && event.logicalKey == LogicalKeyboardKey.space) {
       _spaceIsDown = true;
       setState(() => _pressed = true);
       return KeyEventResult.handled;
@@ -62,8 +56,7 @@ class _KitButtonState extends State<KitButton> {
       _activate();
       return KeyEventResult.handled;
     }
-    if (event is KeyUpEvent &&
-        event.logicalKey == LogicalKeyboardKey.enter) {
+    if (event is KeyUpEvent && event.logicalKey == LogicalKeyboardKey.enter) {
       return KeyEventResult.handled;
     }
     return KeyEventResult.ignored;
@@ -75,8 +68,8 @@ class _KitButtonState extends State<KitButton> {
     final background = !_enabled
         ? colors.surfaceMuted
         : _pressed
-            ? colors.textPrimary
-            : colors.accent;
+        ? colors.textPrimary
+        : colors.accent;
     final foreground = !_enabled ? KitTextTone.secondary : KitTextTone.onAccent;
 
     return Focus(

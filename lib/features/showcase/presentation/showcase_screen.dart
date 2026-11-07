@@ -45,10 +45,7 @@ class _ShowcaseScreenState extends State<ShowcaseScreen> {
             const SizedBox(height: KitSpacing.xl),
             KitText(l10n.appTitle, variant: KitTextVariant.headline),
             const SizedBox(height: KitSpacing.sm),
-            KitText(
-              l10n.appSubtitle,
-              tone: KitTextTone.secondary,
-            ),
+            KitText(l10n.appSubtitle, tone: KitTextTone.secondary),
             const SizedBox(height: KitSpacing.xl),
             Wrap(
               spacing: KitSpacing.xs,

@@ -9,10 +9,7 @@ void main() {
       color: KitThemeData.light.colors.canvas,
       builder: (context, _) => KitTheme(
         data: KitThemeData.light,
-        child: Directionality(
-          textDirection: TextDirection.ltr,
-          child: child,
-        ),
+        child: Directionality(textDirection: TextDirection.ltr, child: child),
       ),
     );
   }

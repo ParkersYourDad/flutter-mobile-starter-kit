@@ -14,10 +14,7 @@ void main() {
         data: KitThemeData.light,
         child: Directionality(
           textDirection: direction,
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: child,
-          ),
+          child: Padding(padding: const EdgeInsets.all(16), child: child),
         ),
       ),
     );
@@ -51,10 +48,7 @@ void main() {
 
     await tester.pumpWidget(
       testApp(
-        child: KitTextField(
-          controller: controller,
-          label: 'البريد الإلكتروني',
-        ),
+        child: KitTextField(controller: controller, label: 'البريد الإلكتروني'),
         direction: TextDirection.rtl,
       ),
     );
@@ -79,7 +73,10 @@ void main() {
     );
 
     expect(find.byType(EditableText), findsOneWidget);
-    expect(tester.widget<EditableText>(find.byType(EditableText)).readOnly, isTrue);
+    expect(
+      tester.widget<EditableText>(find.byType(EditableText)).readOnly,
+      isTrue,
+    );
   });
 
   testWidgets('renders validation feedback', (tester) async {

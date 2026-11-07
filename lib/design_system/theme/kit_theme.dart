@@ -81,11 +81,7 @@ class KitThemeData {
         fontWeight: FontWeight.w600,
         height: 1.3,
       ),
-      body: TextStyle(
-        color: KitColors.textPrimary,
-        fontSize: 16,
-        height: 1.5,
-      ),
+      body: TextStyle(color: KitColors.textPrimary, fontSize: 16, height: 1.5),
       label: TextStyle(
         color: KitColors.textPrimary,
         fontSize: 14,
@@ -102,11 +98,7 @@ class KitThemeData {
 }
 
 class KitTheme extends InheritedWidget {
-  const KitTheme({
-    required this.data,
-    required super.child,
-    super.key,
-  });
+  const KitTheme({required this.data, required super.child, super.key});
 
   final KitThemeData data;
 
