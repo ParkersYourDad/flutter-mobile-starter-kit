@@ -8,5 +8,7 @@
   "componentsTitle": "معاينة المكونات",
   "buttonExample": "اختبر التفاعل",
   "disabledButton": "زر غير مفعل",
-  "buttonPressedMessage": "الزر يعمل بشكل صحيح."
+  "buttonPressedMessage": "الزر يعمل بشكل صحيح.",
+  "switchExample": "تفعيل الإشعارات",
+  "checkboxExample": "أوافق على الشروط"
 }

@@ -13,7 +13,7 @@ class KitIconButton extends StatefulWidget {
     required this.onPressed,
     super.key,
     this.variant = KitIconButtonVariant.neutral,
-    this.size = 48,
+    this.size = KitControlSizes.minimumTapTarget,
   }) : assert(size > 0);
 
   final Widget icon;
@@ -87,6 +87,9 @@ class _KitIconButtonState extends State<KitIconButton> {
     final foreground = widget.variant == KitIconButtonVariant.accent
         ? colors.onAccent
         : colors.textPrimary;
+    final size = widget.size < KitControlSizes.minimumTapTarget
+        ? KitControlSizes.minimumTapTarget
+        : widget.size;
 
     return Focus(
       canRequestFocus: _enabled,
@@ -105,8 +108,8 @@ class _KitIconButtonState extends State<KitIconButton> {
           onTapUp: _enabled ? (_) => setState(() => _pressed = false) : null,
           onTapCancel: _enabled ? () => setState(() => _pressed = false) : null,
           child: Container(
-            width: widget.size < 48 ? 48 : widget.size,
-            height: widget.size < 48 ? 48 : widget.size,
+            width: size,
+            height: size,
             decoration: BoxDecoration(
               color: _enabled ? background : colors.surfaceMuted,
               borderRadius: BorderRadius.circular(KitRadii.md),

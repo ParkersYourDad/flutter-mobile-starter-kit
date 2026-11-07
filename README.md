@@ -15,6 +15,7 @@ A reusable Flutter foundation for **Android and iOS**, with a first-party UI com
 - Text styles and semantic text: `KitText`.
 - Primary action and disabled state: `KitButton`.
 - Icon action foundation: `KitIconButton`.
+- Controlled checkbox and switch.
 - Surface, badge, divider, and empty state.
 
 The public component API is exported from `lib/design_system/kit_ui.dart`.
@@ -63,7 +64,7 @@ lib/
   design_system/
     components/         First-party reusable UI
     theme/              Theme and typography
-    tokens/             Color, spacing, radius, and motion tokens
+    tokens/             Color, spacing, radius, control, motion tokens
     kit_ui.dart         Public UI API
   features/showcase/    Small component preview screen
   l10n/arb/             English and Arabic source translations

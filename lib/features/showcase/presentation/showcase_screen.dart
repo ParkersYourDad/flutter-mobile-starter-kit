@@ -2,8 +2,10 @@ import 'package:flutter/widgets.dart';
 
 import '../../../design_system/components/kit_badge.dart';
 import '../../../design_system/components/kit_button.dart';
+import '../../../design_system/components/kit_checkbox.dart';
 import '../../../design_system/components/kit_divider.dart';
 import '../../../design_system/components/kit_surface.dart';
+import '../../../design_system/components/kit_switch.dart';
 import '../../../design_system/components/kit_text.dart';
 import '../../../design_system/theme/kit_theme.dart';
 import '../../../design_system/tokens/kit_tokens.dart';
@@ -18,6 +20,8 @@ class ShowcaseScreen extends StatefulWidget {
 
 class _ShowcaseScreenState extends State<ShowcaseScreen> {
   bool _buttonWasPressed = false;
+  bool _notificationsEnabled = true;
+  bool _termsAccepted = false;
 
   @override
   Widget build(BuildContext context) {
@@ -70,6 +74,42 @@ class _ShowcaseScreenState extends State<ShowcaseScreen> {
                       tone: KitTextTone.secondary,
                     ),
                   ],
+                  const SizedBox(height: KitSpacing.lg),
+                  const KitDivider(),
+                  const SizedBox(height: KitSpacing.md),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: KitText(
+                          l10n.switchExample,
+                          variant: KitTextVariant.body,
+                        ),
+                      ),
+                      KitSwitch(
+                        value: _notificationsEnabled,
+                        semanticLabel: l10n.switchExample,
+                        onChanged: (value) =>
+                            setState(() => _notificationsEnabled = value),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: KitSpacing.sm),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: KitText(
+                          l10n.checkboxExample,
+                          variant: KitTextVariant.body,
+                        ),
+                      ),
+                      KitCheckbox(
+                        value: _termsAccepted,
+                        semanticLabel: l10n.checkboxExample,
+                        onChanged: (value) =>
+                            setState(() => _termsAccepted = value),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),

@@ -8,5 +8,7 @@
   "componentsTitle": "Component preview",
   "buttonExample": "Test interaction",
   "disabledButton": "Disabled button",
-  "buttonPressedMessage": "The button is working."
+  "buttonPressedMessage": "The button is working.",
+  "switchExample": "Enable notifications",
+  "checkboxExample": "Accept terms"
 }

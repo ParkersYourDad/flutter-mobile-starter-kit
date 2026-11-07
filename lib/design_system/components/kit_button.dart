@@ -96,7 +96,9 @@ class _KitButtonState extends State<KitButton> {
           onTapUp: _enabled ? (_) => setState(() => _pressed = false) : null,
           onTapCancel: _enabled ? () => setState(() => _pressed = false) : null,
           child: Container(
-            constraints: const BoxConstraints(minHeight: 48),
+            constraints: const BoxConstraints(
+              minHeight: KitControlSizes.minimumTapTarget,
+            ),
             padding: const EdgeInsetsDirectional.symmetric(
               horizontal: KitSpacing.lg,
               vertical: KitSpacing.sm,

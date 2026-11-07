@@ -30,6 +30,15 @@ abstract final class KitRadii {
   static const double pill = 999;
 }
 
+abstract final class KitControlSizes {
+  static const double minimumTapTarget = 48;
+  static const double checkbox = 22;
+  static const double switchTapTargetWidth = 52;
+  static const double switchTrackWidth = 48;
+  static const double switchTrackHeight = 28;
+  static const double switchThumb = 18;
+}
+
 abstract final class KitMotion {
   static const Duration fast = Duration(milliseconds: 120);
   static const Duration standard = Duration(milliseconds: 200);
