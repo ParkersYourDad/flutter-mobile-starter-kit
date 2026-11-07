@@ -39,5 +39,5 @@
 
 ## Known limitations
 - The icon button accepts icon content from the caller; a consistent first-party icon drawing set has not been implemented yet.
-- Text input, selection controls, dialogs, and bottom sheets are not part of this initial set. Text editing will be added only with complete selection handles and context-menu behavior, not as a visual-only wrapper.
+- Dialogs and bottom sheets are not part of this initial set. They will be added on top of first-party overlay primitives after modal barrier semantics, focus management, dismissal, route restoration, and reduced-motion behavior are specified and tested.
 - Reduced-motion policy is not wired into the app shell yet. Non-essential component and route animations are intentionally not used until that policy is implemented.
