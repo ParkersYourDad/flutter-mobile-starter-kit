@@ -7,10 +7,8 @@ final GoRouter appRouter = GoRouter(
   routes: <RouteBase>[
     GoRoute(
       path: '/',
-      pageBuilder: (context, state) => KitPage<void>(
-        key: state.pageKey,
-        child: const ShowcaseScreen(),
-      ),
+      pageBuilder: (context, state) =>
+          KitPage<void>(key: state.pageKey, child: const ShowcaseScreen()),
     ),
   ],
 );

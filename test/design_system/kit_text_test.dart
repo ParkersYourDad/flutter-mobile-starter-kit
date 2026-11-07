@@ -4,8 +4,9 @@ import 'package:flutter_mobile_starter_kit/design_system/theme/kit_theme.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('renders text and exposes the supplied semantics label',
-      (tester) async {
+  testWidgets('renders text and exposes the supplied semantics label', (
+    tester,
+  ) async {
     final semantics = tester.ensureSemantics();
     addTearDown(semantics.dispose);
 

@@ -40,13 +40,11 @@ class _KitCheckboxState extends State<KitCheckbox> {
   KeyEventResult _handleKey(FocusNode _, KeyEvent event) {
     if (!_enabled) return KeyEventResult.ignored;
 
-    if (event is KeyDownEvent &&
-        event.logicalKey == LogicalKeyboardKey.enter) {
+    if (event is KeyDownEvent && event.logicalKey == LogicalKeyboardKey.enter) {
       _toggle();
       return KeyEventResult.handled;
     }
-    if (event is KeyDownEvent &&
-        event.logicalKey == LogicalKeyboardKey.space) {
+    if (event is KeyDownEvent && event.logicalKey == LogicalKeyboardKey.space) {
       _spaceIsDown = true;
       return KeyEventResult.handled;
     }
