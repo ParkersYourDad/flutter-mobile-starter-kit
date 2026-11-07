@@ -14,7 +14,7 @@ class KitIconButton extends StatefulWidget {
     super.key,
     this.variant = KitIconButtonVariant.neutral,
     this.size = KitControlSizes.minimumTapTarget,
-  }) : assert(size > 0);
+  }) : assert(size > 0, 'Icon button size must be positive.');
 
   final Widget icon;
   final String semanticLabel;
