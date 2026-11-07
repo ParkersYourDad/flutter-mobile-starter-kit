@@ -10,12 +10,21 @@ void main() {
   }) {
     return WidgetsApp(
       color: KitThemeData.light.colors.canvas,
-      builder: (context, _) => KitTheme(
-        data: KitThemeData.light,
-        child: Directionality(
-          textDirection: direction,
-          child: Padding(padding: const EdgeInsets.all(16), child: child),
-        ),
+      builder: (context, _) => Overlay(
+        initialEntries: [
+          OverlayEntry(
+            builder: (context) => KitTheme(
+              data: KitThemeData.light,
+              child: Directionality(
+                textDirection: direction,
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: child,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
