@@ -8,29 +8,32 @@ void main() {
     tester,
   ) async {
     final semantics = tester.ensureSemantics();
-    addTearDown(semantics.dispose);
 
-    await tester.pumpWidget(
-      WidgetsApp(
-        color: KitThemeData.light.colors.canvas,
-        builder: (context, _) => const KitTheme(
-          data: KitThemeData.light,
-          child: Directionality(
-            textDirection: TextDirection.ltr,
-            child: KitText(
-              'Visible heading',
-              variant: KitTextVariant.headline,
-              semanticsLabel: 'Accessible heading',
+    try {
+      await tester.pumpWidget(
+        WidgetsApp(
+          color: KitThemeData.light.colors.canvas,
+          builder: (context, _) => const KitTheme(
+            data: KitThemeData.light,
+            child: Directionality(
+              textDirection: TextDirection.ltr,
+              child: KitText(
+                'Visible heading',
+                variant: KitTextVariant.headline,
+                semanticsLabel: 'Accessible heading',
+              ),
             ),
           ),
         ),
-      ),
-    );
+      );
 
-    expect(find.text('Visible heading'), findsOneWidget);
-    expect(
-      tester.getSemantics(find.byType(KitText)).label,
-      'Accessible heading',
-    );
+      expect(find.text('Visible heading'), findsOneWidget);
+      expect(
+        tester.getSemantics(find.byType(KitText)).label,
+        'Accessible heading',
+      );
+    } finally {
+      semantics.dispose();
+    }
   });
 }
