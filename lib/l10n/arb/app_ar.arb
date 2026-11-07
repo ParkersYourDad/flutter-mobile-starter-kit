@@ -1,0 +1,12 @@
+{
+  "@@locale": "ar",
+  "appTitle": "حزمة Flutter للتطبيقات",
+  "appSubtitle": "أساس منظم لبناء تطبيقات Android وiOS متقنة.",
+  "flutterBadge": "Flutter",
+  "firstPartyUiBadge": "مكونات داخلية",
+  "mobileOnlyBadge": "للهواتف فقط",
+  "componentsTitle": "معاينة المكونات",
+  "buttonExample": "اختبر التفاعل",
+  "disabledButton": "زر غير مفعل",
+  "buttonPressedMessage": "الزر يعمل بشكل صحيح."
+}

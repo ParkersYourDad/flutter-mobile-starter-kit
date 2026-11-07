@@ -1,0 +1,12 @@
+{
+  "@@locale": "en",
+  "appTitle": "Flutter Mobile Starter Kit",
+  "appSubtitle": "A clean foundation for building polished Android and iOS applications.",
+  "flutterBadge": "Flutter",
+  "firstPartyUiBadge": "First-party UI",
+  "mobileOnlyBadge": "Mobile only",
+  "componentsTitle": "Component preview",
+  "buttonExample": "Test interaction",
+  "disabledButton": "Disabled button",
+  "buttonPressedMessage": "The button is working."
+}
