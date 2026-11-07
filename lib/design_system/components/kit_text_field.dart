@@ -79,8 +79,7 @@ class _KitTextFieldState extends State<KitTextField> {
   void didUpdateWidget(covariant KitTextField oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.focusNode != widget.focusNode) {
-      _focusNode
-        ..removeListener(_handleFocusChange);
+      _focusNode.removeListener(_handleFocusChange);
       if (_ownsFocusNode) _focusNode.dispose();
       _attachFocusNode(widget.focusNode);
     }
@@ -88,16 +87,15 @@ class _KitTextFieldState extends State<KitTextField> {
 
   @override
   void dispose() {
-    _focusNode
-      ..removeListener(_handleFocusChange);
+    _focusNode.removeListener(_handleFocusChange);
     if (_ownsFocusNode) _focusNode.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final colors = KitTheme.of(context).colors;
-    final typography = KitTheme.of(context).typography;
+    final theme = KitTheme.of(context);
+    final colors = theme.colors;
     final enabled = widget.enabled;
     final hasError = widget.errorText != null;
     final borderColor = hasError
@@ -105,10 +103,11 @@ class _KitTextFieldState extends State<KitTextField> {
         : _focusNode.hasFocus
             ? colors.accent
             : colors.outline;
-
     final selectionControls = defaultTargetPlatform == TargetPlatform.iOS
         ? cupertino.cupertinoTextSelectionHandleControls
         : material.materialTextSelectionHandleControls;
+    final keyboardAppearance =
+        MediaQuery.maybeOf(context)?.platformBrightness ?? Brightness.light;
 
     return Semantics(
       container: true,
@@ -136,35 +135,37 @@ class _KitTextFieldState extends State<KitTextField> {
                 vertical: KitSpacing.sm,
               ),
               child: material.Theme(
-                // Material is used only for Android's native text-selection
-                // handles and the adaptive platform context-menu primitives.
+                // Material is limited to Android selection handles and the
+                // adaptive platform context-menu primitives.
                 data: material.ThemeData(platform: defaultTargetPlatform),
                 child: EditableText(
-                controller: widget.controller,
-                focusNode: _focusNode,
-                style: typography.body.copyWith(
-                  color: enabled ? colors.textPrimary : colors.textSecondary,
-                ),
-                cursorColor: colors.accent,
-                backgroundCursorColor: colors.textSecondary,
-                selectionColor: colors.accent.withValues(alpha: 0.22),
-                selectionControls: selectionControls,
-                contextMenuBuilder: (context, editableTextState) =>
-                    material.AdaptiveTextSelectionToolbar.editableText(
-                      editableTextState: editableTextState,
-                    ),
-                keyboardType: widget.keyboardType,
-                textInputAction: widget.textInputAction,
-                inputFormatters: widget.inputFormatters,
-                autofillHints: widget.autofillHints,
-                maxLines: widget.maxLines,
-                minLines: widget.minLines,
-                obscureText: widget.obscureText,
-                readOnly: widget.readOnly || !enabled,
-                onChanged: enabled ? widget.onChanged : null,
-                onSubmitted: enabled ? widget.onSubmitted : null,
-                enableInteractiveSelection: true,
-                keyboardAppearance: MediaQuery.platformBrightnessOf(context),
+                  controller: widget.controller,
+                  focusNode: _focusNode,
+                  style: theme.typography.body.copyWith(
+                    color: enabled
+                        ? colors.textPrimary
+                        : colors.textSecondary,
+                  ),
+                  cursorColor: colors.accent,
+                  backgroundCursorColor: colors.textSecondary,
+                  selectionColor: colors.accent.withValues(alpha: 0.22),
+                  selectionControls: selectionControls,
+                  contextMenuBuilder: (context, editableTextState) =>
+                      material.AdaptiveTextSelectionToolbar.editableText(
+                        editableTextState: editableTextState,
+                      ),
+                  keyboardType: widget.keyboardType,
+                  textInputAction: widget.textInputAction,
+                  inputFormatters: widget.inputFormatters,
+                  autofillHints: widget.autofillHints,
+                  maxLines: widget.maxLines,
+                  minLines: widget.minLines,
+                  obscureText: widget.obscureText,
+                  readOnly: widget.readOnly || !enabled,
+                  onChanged: enabled ? widget.onChanged : null,
+                  onSubmitted: enabled ? widget.onSubmitted : null,
+                  enableInteractiveSelection: true,
+                  keyboardAppearance: keyboardAppearance,
                 ),
               ),
             ),
