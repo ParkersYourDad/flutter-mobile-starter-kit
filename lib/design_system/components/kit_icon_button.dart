@@ -1,20 +1,20 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
-import '../theme/kit_theme.dart';
-import '../tokens/kit_tokens.dart';
+import 'package:flutter_mobile_starter_kit/design_system/theme/kit_theme.dart';
+import 'package:flutter_mobile_starter_kit/design_system/tokens/kit_tokens.dart';
 
 enum KitIconButtonVariant { neutral, accent, quiet }
 
 class KitIconButton extends StatefulWidget {
-  const KitIconButton({
+  const new({
     required this.icon,
     required this.semanticLabel,
     required this.onPressed,
     super.key,
     this.variant = KitIconButtonVariant.neutral,
     this.size = KitControlSizes.minimumTapTarget,
-  }) : assert(size > 0);
+  }) : assert(size > 0, 'Icon button size must be positive.');
 
   final Widget icon;
   final String semanticLabel;
@@ -50,13 +50,11 @@ class _KitIconButtonState extends State<KitIconButton> {
   KeyEventResult _handleKey(FocusNode _, KeyEvent event) {
     if (!_enabled) return KeyEventResult.ignored;
 
-    if (event is KeyDownEvent &&
-        event.logicalKey == LogicalKeyboardKey.enter) {
+    if (event is KeyDownEvent && event.logicalKey == LogicalKeyboardKey.enter) {
       _activate();
       return KeyEventResult.handled;
     }
-    if (event is KeyDownEvent &&
-        event.logicalKey == LogicalKeyboardKey.space) {
+    if (event is KeyDownEvent && event.logicalKey == LogicalKeyboardKey.space) {
       _spaceIsDown = true;
       setState(() => _pressed = true);
       return KeyEventResult.handled;
@@ -69,8 +67,7 @@ class _KitIconButtonState extends State<KitIconButton> {
       _activate();
       return KeyEventResult.handled;
     }
-    if (event is KeyUpEvent &&
-        event.logicalKey == LogicalKeyboardKey.enter) {
+    if (event is KeyUpEvent && event.logicalKey == LogicalKeyboardKey.enter) {
       return KeyEventResult.handled;
     }
     return KeyEventResult.ignored;
@@ -79,7 +76,7 @@ class _KitIconButtonState extends State<KitIconButton> {
   @override
   Widget build(BuildContext context) {
     final colors = KitTheme.of(context).colors;
-    final Color? background = switch (widget.variant) {
+    final background = switch (widget.variant) {
       KitIconButtonVariant.neutral => colors.surfaceMuted,
       KitIconButtonVariant.accent => colors.accent,
       KitIconButtonVariant.quiet => null,

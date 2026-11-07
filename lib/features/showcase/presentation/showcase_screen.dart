@@ -1,18 +1,18 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../design_system/components/kit_badge.dart';
-import '../../../design_system/components/kit_button.dart';
-import '../../../design_system/components/kit_checkbox.dart';
-import '../../../design_system/components/kit_divider.dart';
-import '../../../design_system/components/kit_surface.dart';
-import '../../../design_system/components/kit_switch.dart';
-import '../../../design_system/components/kit_text.dart';
-import '../../../design_system/theme/kit_theme.dart';
-import '../../../design_system/tokens/kit_tokens.dart';
-import '../../../l10n/app_localizations.dart';
+import 'package:flutter_mobile_starter_kit/design_system/components/kit_badge.dart';
+import 'package:flutter_mobile_starter_kit/design_system/components/kit_button.dart';
+import 'package:flutter_mobile_starter_kit/design_system/components/kit_checkbox.dart';
+import 'package:flutter_mobile_starter_kit/design_system/components/kit_divider.dart';
+import 'package:flutter_mobile_starter_kit/design_system/components/kit_surface.dart';
+import 'package:flutter_mobile_starter_kit/design_system/components/kit_switch.dart';
+import 'package:flutter_mobile_starter_kit/design_system/components/kit_text.dart';
+import 'package:flutter_mobile_starter_kit/design_system/theme/kit_theme.dart';
+import 'package:flutter_mobile_starter_kit/design_system/tokens/kit_tokens.dart';
+import 'package:flutter_mobile_starter_kit/l10n/app_localizations.dart';
 
 class ShowcaseScreen extends StatefulWidget {
-  const ShowcaseScreen({super.key});
+  const new({super.key});
 
   @override
   State<ShowcaseScreen> createState() => _ShowcaseScreenState();
@@ -37,10 +37,7 @@ class _ShowcaseScreenState extends State<ShowcaseScreen> {
             const SizedBox(height: KitSpacing.xl),
             KitText(l10n.appTitle, variant: KitTextVariant.headline),
             const SizedBox(height: KitSpacing.sm),
-            KitText(
-              l10n.appSubtitle,
-              tone: KitTextTone.secondary,
-            ),
+            KitText(l10n.appSubtitle, tone: KitTextTone.secondary),
             const SizedBox(height: KitSpacing.xl),
             Wrap(
               spacing: KitSpacing.xs,
@@ -79,12 +76,7 @@ class _ShowcaseScreenState extends State<ShowcaseScreen> {
                   const SizedBox(height: KitSpacing.md),
                   Row(
                     children: [
-                      Expanded(
-                        child: KitText(
-                          l10n.switchExample,
-                          variant: KitTextVariant.body,
-                        ),
-                      ),
+                      Expanded(child: KitText(l10n.switchExample)),
                       KitSwitch(
                         value: _notificationsEnabled,
                         semanticLabel: l10n.switchExample,
@@ -96,12 +88,7 @@ class _ShowcaseScreenState extends State<ShowcaseScreen> {
                   const SizedBox(height: KitSpacing.sm),
                   Row(
                     children: [
-                      Expanded(
-                        child: KitText(
-                          l10n.checkboxExample,
-                          variant: KitTextVariant.body,
-                        ),
-                      ),
+                      Expanded(child: KitText(l10n.checkboxExample)),
                       KitCheckbox(
                         value: _termsAccepted,
                         semanticLabel: l10n.checkboxExample,

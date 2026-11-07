@@ -32,7 +32,7 @@ void main() {
     await tester.pumpWidget(
       WidgetsApp(
         color: KitThemeData.light.colors.canvas,
-        builder: (context, _) => KitTheme(
+        builder: (context, _) => const KitTheme(
           data: KitThemeData.light,
           child: Directionality(
             textDirection: TextDirection.ltr,

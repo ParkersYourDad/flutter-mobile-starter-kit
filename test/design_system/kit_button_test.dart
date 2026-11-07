@@ -9,10 +9,7 @@ void main() {
       color: KitThemeData.light.colors.canvas,
       builder: (context, _) => KitTheme(
         data: KitThemeData.light,
-        child: Directionality(
-          textDirection: TextDirection.ltr,
-          child: child,
-        ),
+        child: Directionality(textDirection: TextDirection.ltr, child: child),
       ),
     );
   }
@@ -30,9 +27,9 @@ void main() {
   });
 
   testWidgets('does not invoke callback when disabled', (tester) async {
-    var taps = 0;
+    const taps = 0;
     await tester.pumpWidget(
-      testApp(child: KitButton(label: 'Disabled', onPressed: null)),
+      testApp(child: const KitButton(label: 'Disabled', onPressed: null)),
     );
 
     await tester.tap(find.text('Disabled'));

@@ -1,10 +1,10 @@
 import 'package:flutter/widgets.dart';
 
-import '../theme/kit_theme.dart';
-import '../tokens/kit_tokens.dart';
+import 'package:flutter_mobile_starter_kit/design_system/theme/kit_theme.dart';
+import 'package:flutter_mobile_starter_kit/design_system/tokens/kit_tokens.dart';
 
 class KitSurface extends StatelessWidget {
-  const KitSurface({
+  const new({
     required this.child,
     super.key,
     this.padding = const EdgeInsets.all(KitSpacing.lg),

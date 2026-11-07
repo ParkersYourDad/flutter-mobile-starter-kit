@@ -9,16 +9,14 @@ void main() {
       color: KitThemeData.light.colors.canvas,
       builder: (context, _) => KitTheme(
         data: KitThemeData.light,
-        child: Directionality(
-          textDirection: TextDirection.ltr,
-          child: child,
-        ),
+        child: Directionality(textDirection: TextDirection.ltr, child: child),
       ),
     );
   }
 
-  testWidgets('invokes callback when enabled icon button is tapped',
-      (tester) async {
+  testWidgets('invokes callback when enabled icon button is tapped', (
+    tester,
+  ) async {
     var taps = 0;
     await tester.pumpWidget(
       testApp(
@@ -35,12 +33,12 @@ void main() {
   });
 
   testWidgets('does not invoke callback when disabled', (tester) async {
-    var taps = 0;
+    const taps = 0;
     await tester.pumpWidget(
       testApp(
-        child: KitIconButton(
+        child: const KitIconButton(
           semanticLabel: 'Close',
-          icon: const Text('x'),
+          icon: Text('x'),
           onPressed: null,
         ),
       ),
