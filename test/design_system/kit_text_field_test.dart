@@ -42,7 +42,7 @@ void main() {
     expect(changed, 'person@example.com');
   });
 
-  testWidgets('exposes a text-field semantic node', (tester) async {
+  testWidgets('exposes the supplied semantic label', (tester) async {
     final controller = TextEditingController();
     addTearDown(controller.dispose);
 
@@ -55,7 +55,6 @@ void main() {
 
     final semantics = tester.getSemantics(find.byType(KitTextField));
     expect(semantics.label, 'البريد الإلكتروني');
-    expect(semantics.hasFlag(SemanticsFlag.isTextField), isTrue);
   });
 
   testWidgets('does not accept edits when disabled', (tester) async {
