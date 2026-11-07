@@ -124,7 +124,9 @@ class _KitTextFieldState extends State<KitTextField> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          KitText(widget.label, variant: KitTextVariant.label),
+          ExcludeSemantics(
+            child: KitText(widget.label, variant: KitTextVariant.label),
+          ),
           const SizedBox(height: KitSpacing.xs),
           DecoratedBox(
             decoration: BoxDecoration(
