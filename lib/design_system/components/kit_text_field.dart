@@ -107,8 +107,8 @@ class _KitTextFieldState extends State<KitTextField> {
             : colors.outline;
 
     final selectionControls = defaultTargetPlatform == TargetPlatform.iOS
-        ? cupertino.CupertinoTextSelectionControls()
-        : material.MaterialTextSelectionControls();
+        ? cupertino.cupertinoTextSelectionHandleControls
+        : material.materialTextSelectionHandleControls;
 
     return Semantics(
       container: true,
@@ -135,7 +135,11 @@ class _KitTextFieldState extends State<KitTextField> {
                 horizontal: KitSpacing.md,
                 vertical: KitSpacing.sm,
               ),
-              child: EditableText(
+              child: material.Theme(
+                // Material is used only for Android's native text-selection
+                // handles and the adaptive platform context-menu primitives.
+                data: material.ThemeData(platform: defaultTargetPlatform),
+                child: EditableText(
                 controller: widget.controller,
                 focusNode: _focusNode,
                 style: typography.body.copyWith(
@@ -160,7 +164,8 @@ class _KitTextFieldState extends State<KitTextField> {
                 onChanged: enabled ? widget.onChanged : null,
                 onSubmitted: enabled ? widget.onSubmitted : null,
                 enableInteractiveSelection: true,
-                keyboardAppearance: Brightness.light,
+                keyboardAppearance: MediaQuery.platformBrightnessOf(context),
+                ),
               ),
             ),
           ),
