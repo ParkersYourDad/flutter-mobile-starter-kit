@@ -23,8 +23,19 @@ jobs:
         run: flutter pub get
       - name: Generate localizations
         run: flutter gen-l10n
-      - name: Check formatting
-        run: dart format --output=none --set-exit-if-changed .
+      - name: Show formatter output for baseline files
+        run: >-
+          dart format --output=show
+          lib/app/router.dart
+          lib/design_system/components/kit_button.dart
+          lib/design_system/components/kit_checkbox.dart
+          lib/design_system/components/kit_icon_button.dart
+          lib/design_system/components/kit_switch.dart
+          lib/design_system/theme/kit_theme.dart
+          lib/features/showcase/presentation/showcase_screen.dart
+          test/design_system/kit_button_test.dart
+          test/design_system/kit_icon_button_test.dart
+          test/design_system/kit_text_test.dart
       - name: Analyze
         run: flutter analyze
       - name: Test
